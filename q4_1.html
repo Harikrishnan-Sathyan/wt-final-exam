@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <label for=""> Basic Salary</label>
+    <input type="text" id="bsal">
+    <button onclick="check(document.getElementById('bsal').value)">Submit</button>
+    
+    <p id="display"></p>
+
+    <script>
+        var basicsal;
+        var hra;
+        var da;
+        function check(sal){
+            if(sal<1500){
+               hra = 1500*0.10;
+               da = 1500*0.90;     
+            }
+
+            else if(sal>=1500){
+                hra = 500;
+                da = 1500*0.98;
+            }
+            var result = hra+da+sal;
+
+
+            document.getElementById('display').innerHTML = "Gross Salary: "+(result);
+
+        }
+
+
+    </script>
+</body>
+</html>
